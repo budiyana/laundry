@@ -3,7 +3,7 @@
 @section('content')
  
 <div>
-    <a href="{{route('Paket.create')}}" class="btn btn-primary">Tambah Paket</a>
+    <a href="{{route('Paket.create')}}" class="btn btn-primary ms-3">Tambah Paket</a>
 </div>
 <div  class="my-3 p-3 bg-body rounded shadow-sm"> 
     <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -15,6 +15,8 @@
                                             <td>Harga</td>       
                                             <td>Aksi</td>       
                                         </tr>
+                                    </thead>
+                                    <tbody>
                                         @foreach ($Paket as $q)
                                         <tr>
                                             <td>{{$q->id}}</td>

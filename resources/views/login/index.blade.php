@@ -13,7 +13,7 @@
     <form action="{{url('login/proses')}}" method="post">
       @csrf
       {{-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> --}}
-      <h1 class="h3 mb-3 fw-normal">Login</h1>
+      <h1 align="middle" class="h1 mb-3 fw-normal" >Login</h1>
     
       <div class="form-floating">
         <input type="username" class="form-control" name="username"

@@ -1,39 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-  body{
-    background-color:#646060;
-    margin:0px;
-    padding:10px;
-}
-h1 {
-  color: blanchedalmond;
-}
- .select {
-  text-align: justify;
- }
-</style>
-</head>
-<body>
-
-  <h1>Tambah Member</h1>
-  <form action={{route('Member.store')}} method="POST">
-      @csrf
-      <input type="text" name="id" placeholder="masukan id"><br>
-      <input type="text" name="nama" placeholder="masukan nama"><br>
-      <textarea name="alamat" rows="10" placeholder="masukan alamat"></textarea><br>
-      <select class="form-select" aria-label="Default select example">
-          <option selected>Pilih Jenis Kelamin</option>
-          <option value="1">L</option>
-          <option value="2">P</option>
-        </select><br>
-      <input type="text" name="tlp" placeholder="maksukan telepon"><br>
-      <input type="submit" name="submit" value="Save">
-  
+      @extends('template')
+      @section('content')
+       
+      <form action={{route('Member.store')}} method="POST">
+          @csrf
+          <div  class="my-3 p-3 bg-body rounded shadow-sm"> 
+              <h2 align="center">Tambah Member</h2>
+              <div class="mb-3 row">
+                  <label for="id" class="col-sm-2 col-form-label">Id </label>
+                  <div class="col-sm-10">
+                  <input class="form-control" type="text" name="id" placeholder="masukan id">
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <label for="id" class="col-sm-2 col-form-label">Nama </label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="text" name="nama" placeholder="masukan nama">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                  <label for="id" class="col-sm-2 col-form-label">Alamat </label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control"  name="alamat" rows="10" placeholder="masukan alamat"></textarea>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                  <label for="id" class="col-sm-2 col-form-label">Pilih Jenis Kelamin </label>
+                      <div class="col-sm-10">
+                          <select name="jenis_kelamin" id="">
+                            <option value="L">L</option>
+                            <option value="P">P</option>
+                          </select>
+                      </div>
+                  </div>
+              <div class="mb-3 row">
+                  <label for="id" class="col-sm-2 col-form-label">Telepon</label>
+                  <div class="col-sm-10">
+                    <input class="form-control"  type="text" name="tlp" placeholder="maksukan telepon">
+                </div>
+                  </div>
+                  <div class="col-sm-10"><button class="btn btn-primary" type="submit" name="submit"> Save </button></div>
+      </form>
       
-  </class=form>
+      @endsection
 
-</body>
-</html>
+
 
